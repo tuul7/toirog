@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Хэрэглэгчийн бүртгэл</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #111;
+            color: white;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #2ecc71;
+            color: white;
+            cursor: pointer;
+        }
+
+        .delete {
+            background: red;
+        }
+
+        .edit {
+            background: orange;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #444;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Хэрэглэгчийн бүртгэл</h1>
+
+        <div class="form">
+            <input id="ovog" placeholder="Овог">
+            <input id="ner" placeholder="Нэр">
+            <input id="nas" placeholder="Нас" type="number">
+            <button id="addBtn">Бүртгэх</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Овог</th>
+                    <th>Нэр</th>
+                    <th>Нас</th>
+                    <th>Үйлдэл</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+
+    <script>
+        const addBtn = document.getElementById("addBtn")
+        const tableBody = document.getElementById("tableBody")
+
+        addBtn.addEventListener("click", () => {
+            const ovog = document.getElementById("ovog").value
+            const ner = document.getElementById("ner").value
+            const nas = document.getElementById("nas").value
+
+            if (!ovog || !ner || !nas) {
+                alert("Бүх утгыг оруул!")
+                return
+            }
+
+            const tr = document.createElement("tr")
+
+            tr.innerHTML = `
+            <td>${tableBody.children.length + 1}</td>
+            <td>${ovog}</td>
+            <td>${ner}</td>
+            <td>${nas}</td>
+            <td>
+                <button class="edit">Засах</button>
+                <button class="delete">X</button>
+            </td>
+            `
+
+            const deleteBtn = tr.querySelector(".delete")
+            const editBtn = tr.querySelector(".edit")
+
+            // Устгах
+            deleteBtn.addEventListener("click", () => {
+                tr.remove()
+                updateNumbers()
+            })
+
+            // Засах
+            editBtn.addEventListener("click", () => {
+                const tds = tr.querySelectorAll("td")
+
+                const newOvog = prompt("Овог засах:", tds[1].innerText)
+                const newNer = prompt("Нэр засах:", tds[2].innerText)
+                const newNas = prompt("Нас засах:", tds[3].innerText)
+
+                if (!newOvog || !newNer || !newNas) {
+                    alert("Бүх утгыг бөглөнө үү!")
+                    return
+                }
+
+                tds[1].innerText = newOvog
+                tds[2].innerText = newNer
+                tds[3].innerText = newNas
+            })
+
+            tableBody.appendChild(tr)
+
+            // input цэвэрлэх
+            document.getElementById("ovog").value = ""
+            document.getElementById("ner").value = ""
+            document.getElementById("nas").value = ""
+        })
+
+        // № шинэчлэх
+        function updateNumbers() {
+            const rows = tableBody.querySelectorAll("tr")
+            rows.forEach((row, index) => {
+                row.children[0].innerText = index + 1
+            })
+        }
+    </script>
+
+</body>
+
+</html>

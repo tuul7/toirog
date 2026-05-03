@@ -1,0 +1,122 @@
+<html>
+
+<head>
+    <title>Glass Login</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+
+            /* Background gradient */
+            background: linear-gradient(120deg, #1b3d1b, #4f7d2a);
+        }
+
+        /* Card */
+        .card {
+            width: 350px;
+            padding: 60px 30px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            position: relative;
+            color: white;
+        }
+
+        /* Avatar circle */
+        .avatar {
+            width: 90px;
+            height: 90px;
+            background: #1b3d1b;
+            border-radius: 50%;
+            position: absolute;
+            top: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+        }
+
+        /* Inputs */
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Remember + forgot */
+        .options {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            margin: 10px 0;
+        }
+
+        .options a {
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        /* Button */
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background: #1b3d1b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            letter-spacing: 2px;
+        }
+
+        .login-btn:hover {
+            background: #143014;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="card">
+
+        <div class="avatar">👤</div>
+
+        <!-- GET FORM -->
+        <form action="lab2.html" method="get">
+
+            <input type="email" name="email" placeholder="Email ID" required>
+
+            <input type="password" name="password" placeholder="Password" required>
+
+            <div class="options">
+                <label>
+                    <input type="checkbox" name="remember"> Remember me
+                </label>
+
+                <a href="#">Forgot Password?</a>
+            </div>
+
+            <input type="submit" value="LOGIN" class="login-btn">
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

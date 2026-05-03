@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <title>CSS Туршилтын Жишээ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .box {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Margin */
+        .box-margin {
+            margin: 20px;
+            /* гадна талын зай */
+            background-color: #a2d2ff;
+        }
+
+        /* Padding */
+        .box-padding {
+            padding: 40px;
+            /* дотор талын зай */
+            background-color: #bde0fe;
+        }
+
+        /* Align */
+        .text-align {
+            text-align: center;
+            /* текстийг төвд байрлуулна */
+            background-color: #caffbf;
+        }
+
+        /* Border */
+        .box-border {
+            border: 3px dashed #333;
+            /* хүрээ */
+            background-color: #ffd6a5;
+        }
+
+        /* Line-height */
+        .text-line {
+            line-height: 5;
+            /* мөр хоорондын зай */
+            background-color: #ffadad;
+        }
+
+        /* Opacity */
+        .box-opacity {
+            opacity: 0.6;
+            /* тунгалаг байдал */
+            background-color: #9bf6ff;
+        }
+
+        /* !important */
+        .override-style {
+            color: red !important;
+            /* заавал улаан өнгөөр харагдана */
+            background-color: #fdffb6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Туршилтын Элементүүд</h1>
+
+    <div class="container">
+        <div class="box box-margin">Margin жишээ</div>
+        <div class="box box-padding">Padding жишээ</div>
+        <div class="box text-align">Text Align жишээ</div>
+        <div class="box box-border">Border жишээ</div>
+        <div class="box text-line">Line-height жишээ<br>Мөр хоорондын зай 5</div>
+        <div class="box box-opacity">Opacity жишээ</div>
+        <div class="box override-style">!important жишээ</div>
+    </div>
+
+</body>
+
+</html>

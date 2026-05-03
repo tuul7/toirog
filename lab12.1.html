@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storage + Fetch Assignment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #0b0b0b;
+            color: #fff;
+        }
+
+        .card-dark {
+            background: #151515;
+            border: 1px solid #2b2b2b;
+            border-radius: 16px;
+        }
+
+        .form-control {
+            background: #111;
+            color: #fff;
+            border: 1px solid #333;
+        }
+
+        .form-control:focus {
+            background: #111;
+            color: #fff;
+            border-color: #18f5b6;
+            box-shadow: none;
+        }
+
+        .btn-mint {
+            background: #18f5b6;
+            color: #000;
+            font-weight: 600;
+            border: none;
+        }
+
+        .btn-mint:hover {
+            background: #11d9a2;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-4">
+        <h1 class="mb-4 fw-bold">Cookie, localStorage, sessionStorage, fetch()</h1>
+
+        <div class="row g-4">
+            <!-- COOKIE -->
+            <div class="col-12 col-lg-6">
+                <div class="card-dark p-4">
+                    <h4>Cookie</h4>
+                    <input id="cookieKey" class="form-control mb-2" placeholder="Key">
+                    <input id="cookieValue" class="form-control mb-2" placeholder="Value">
+
+                    <div class="d-flex gap-2 mb-3">
+                        <button class="btn btn-mint" onclick="setCookie()">Save</button>
+                        <button class="btn btn-outline-light" onclick="readCookie()">Read</button>
+                        <button class="btn btn-outline-danger" onclick="deleteCookie()">Delete</button>
+                    </div>
+
+                    <div id="cookieResult" class="p-3 bg-dark rounded">-</div>
+                </div>
+            </div>
+
+            <!-- LOCAL -->
+            <div class="col-12 col-lg-6">
+                <div class="card-dark p-4">
+                    <h4>localStorage</h4>
+                    <input id="localKey" class="form-control mb-2" placeholder="Key">
+                    <input id="localValue" class="form-control mb-2" placeholder="Value">
+
+                    <div class="d-flex gap-2 mb-3">
+                        <button class="btn btn-mint" onclick="saveLocal()">Save</button>
+                        <button class="btn btn-outline-light" onclick="readLocal()">Read</button>
+                        <button class="btn btn-outline-danger" onclick="deleteLocal()">Delete</button>
+                    </div>
+
+                    <div id="localResult" class="p-3 bg-dark rounded">-</div>
+                </div>
+            </div>
+
+            <!-- SESSION -->
+            <div class="col-12 col-lg-6">
+                <div class="card-dark p-4">
+                    <h4>sessionStorage</h4>
+                    <input id="sessionKey" class="form-control mb-2" placeholder="Key">
+                    <input id="sessionValue" class="form-control mb-2" placeholder="Value">
+
+                    <div class="d-flex gap-2 mb-3">
+                        <button class="btn btn-mint" onclick="saveSession()">Save</button>
+                        <button class="btn btn-outline-light" onclick="readSession()">Read</button>
+                        <button class="btn btn-outline-danger" onclick="deleteSession()">Delete</button>
+                    </div>
+
+                    <div id="sessionResult" class="p-3 bg-dark rounded">-</div>
+                </div>
+            </div>
+
+            <!-- FETCH -->
+            <div class="col-12">
+                <div class="card-dark p-4">
+                    <h4>fetch() + Bootstrap list</h4>
+                    <button class="btn btn-mint mb-3" onclick="loadUsers()">Load Users</button>
+                    <div id="userList" class="list-group"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // COOKIE
+        function setCookie() {
+            const key = document.getElementById("cookieKey").value.trim();
+            const value = document.getElementById("cookieValue").value.trim();
+
+            if (!key) {
+                document.getElementById("cookieResult").textContent = "Key required";
+                return;
+            }
+
+            document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}; path=/; max-age=3600`;
+            document.getElementById("cookieResult").textContent = "Saved!";
+        }
+
+        function readCookie() {
+            const key = document.getElementById("cookieKey").value.trim();
+
+            if (!key) {
+                document.getElementById("cookieResult").textContent = "Enter key";
+                return;
+            }
+
+            const cookies = document.cookie.split("; ");
+            let result = null;
+
+            cookies.forEach((c) => {
+                const [k, v] = c.split("=");
+                if (decodeURIComponent(k) === key) {
+                    result = decodeURIComponent(v);
+                }
+            });
+
+            document.getElementById("cookieResult").textContent =
+                result ? result : "No cookie found.";
+        }
+
+        function deleteCookie() {
+            const key = document.getElementById("cookieKey").value.trim();
+
+            document.cookie = `${encodeURIComponent(key)}=; path=/; max-age=0`;
+            document.getElementById("cookieResult").textContent = "Deleted!";
+        }
+
+        // LOCAL
+        function saveLocal() {
+            const key = document.getElementById("localKey").value.trim();
+            const value = document.getElementById("localValue").value.trim();
+
+            localStorage.setItem(key, value);
+            document.getElementById("localResult").textContent = "Saved!";
+        }
+
+        function readLocal() {
+            const key = document.getElementById("localKey").value.trim();
+            const value = localStorage.getItem(key);
+
+            document.getElementById("localResult").textContent =
+                value ? value : "No data";
+        }
+
+        function deleteLocal() {
+            const key = document.getElementById("localKey").value.trim();
+            localStorage.removeItem(key);
+            document.getElementById("localResult").textContent = "Deleted!";
+        }
+
+        // SESSION
+        function saveSession() {
+            const key = document.getElementById("sessionKey").value.trim();
+            const value = document.getElementById("sessionValue").value.trim();
+
+            sessionStorage.setItem(key, value);
+            document.getElementById("sessionResult").textContent = "Saved!";
+        }
+
+        function readSession() {
+            const key = document.getElementById("sessionKey").value.trim();
+            const value = sessionStorage.getItem(key);
+
+            document.getElementById("sessionResult").textContent =
+                value ? value : "No data";
+        }
+
+        function deleteSession() {
+            const key = document.getElementById("sessionKey").value.trim();
+            sessionStorage.removeItem(key);
+            document.getElementById("sessionResult").textContent = "Deleted!";
+        }
+
+        // FETCH
+        async function loadUsers() {
+            const userList = document.getElementById("userList");
+            userList.innerHTML = "Loading...";
+
+            const res = await fetch("https://jsonplaceholder.typicode.com/users");
+            const data = await res.json();
+
+            userList.innerHTML = "";
+            data.forEach((u) => {
+                const div = document.createElement("div");
+                div.className = "list-group-item bg-dark text-white border-secondary";
+                div.innerHTML = `<b>${u.name}</b><br>${u.email}<br>${u.address.city}`;
+                userList.appendChild(div);
+            });
+        }
+    </script>
+
+</body>
+
+</html>

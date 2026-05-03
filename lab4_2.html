@@ -1,0 +1,153 @@
+<html>
+
+<head>
+    <title>Login</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* Background Gradient */
+            background: linear-gradient(120deg, #003c46, #6a004f);
+        }
+
+        /* MAIN BOX */
+        .container {
+            width: 900px;
+            height: 520px;
+            background: #f2f2f2;
+            border-radius: 25px;
+            display: flex;
+            overflow: hidden;
+        }
+
+        /* LEFT */
+        .left {
+            width: 50%;
+            padding: 60px;
+        }
+
+        .left h3 {
+            color: #e48aa3;
+            margin: 0;
+        }
+
+        .left h1 {
+            margin: 10px 0 30px;
+        }
+
+        /* Inputs */
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            background: #cfe0ea;
+        }
+
+        .login-btn {
+            width: 140px;
+            padding: 10px;
+            background: #e48aa3;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        /* Social */
+        .social {
+            margin-top: 30px;
+        }
+
+        .social button {
+            padding: 8px 15px;
+            margin-right: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            background: white;
+            cursor: pointer;
+        }
+
+        /* RIGHT */
+        .right {
+            width: 50%;
+            background: #cfe0ea;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right img {
+            width: 80%;
+        }
+
+        .signup {
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        .signup a {
+            color: #e48aa3;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- LEFT LOGIN -->
+        <div class="left">
+
+            <h3>Logo Here</h3>
+            <p>Welcome back !!!</p>
+            <h1>Log In</h1>
+
+            <!-- GET FORM -->
+            <form action="lab2.html" method="get">
+
+                <label>Email</label>
+                <input type="email" name="email" placeholder="login@gmail.com" required>
+
+                <label>Password</label>
+                <input type="password" name="password" placeholder="********" required>
+
+                <input type="submit" value="LOGIN →" class="login-btn">
+
+            </form>
+
+            <!-- Social -->
+            <div class="social">
+                <p>or continue with</p>
+
+                <button>Google</button>
+                <button>Github</button>
+                <button>Facebook</button>
+            </div>
+
+            <div class="signup">
+                Don’t have an account yet?
+                <a href="#">Sign up for free</a>
+            </div>
+
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="right">
+            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/girl-working-on-laptop-6297416-5187871.png">
+        </div>
+
+    </div>
+
+</body>
+
+</html>

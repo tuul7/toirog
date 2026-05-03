@@ -1,0 +1,166 @@
+<html>
+
+<head>
+    <title>Дасгал ажил</title>
+
+    <style>
+        body {
+            background: black;
+        }
+
+        /* TITLE */
+        .title {
+            text-align: center;
+            color: white;
+        }
+
+        /* MENU */
+        .menu {
+            width: 100%;
+            background: #CBA0FF;
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            padding: 15px;
+        }
+
+        button {
+            border: none;
+            padding: 8px 40px;
+            background: #cccccc;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #80b4fc;
+        }
+
+        button:active {
+            background: pink;
+        }
+
+        /* MAIN LAYOUT */
+        .container {
+            display: flex;
+            width: 100%;
+            padding: 20px;
+            gap: 10px;
+            box-sizing: border-box;
+        }
+
+        /* LEFT PROFILE */
+        .profile {
+            width: 25%;
+            background: #F4C2C2;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        /* RIGHT SIDE */
+        .right {
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* CONTENT */
+        .content {
+            background: #FFFACD;
+            padding: 10px;
+            height: 450px;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #e69191;
+            text-align: center;
+            padding: 20px;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TITLE -->
+    <h2 class="title"><i>ДАСГАЛ АЖИЛ:</i></h2>
+
+    <!-- MENU -->
+    <div class="menu">
+
+        <a href="home.html" target="content">
+            <button type="button">Нүүр хуудас</button>
+        </a>
+
+        <a href="picture.html" target="content">
+            <button type="button">Зургууд</button>
+        </a>
+
+        <a href="video.html" target="content">
+            <button type="button">Бичлэг</button>
+        </a>
+
+        <a href="map.html" target="content">
+            <button type="button">Газрын зураг</button>
+        </a>
+
+        <button type="button" disabled>
+            Удахгүй
+        </button>
+
+    </div>
+
+    <!-- MAIN -->
+    <div class="container">
+
+        <!-- LEFT PROFILE -->
+        <div class="profile">
+
+            <img src="profile.jpg" width="250" height="250">
+
+            <h3 style="text-align:center; color:purple;">
+                <i>Хувийн мэдээлэл</i>
+            </h3>
+
+            Нэр: М.Энхтуул <br>
+            Нас: 18 <br>
+            Мэргэжил: Програм хангамж 2+2 <br>
+            Оюутны код: B25FM1208 <br><br>
+
+            <a href="profile.jpg" target="_blank">
+                <center>Зураг харах</center>
+            </a>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right">
+
+            <!-- CONTENT -->
+            <div class="content">
+
+                <iframe name="content" width="100%" height="100%" frameborder="0"></iframe>
+
+            </div>
+
+            <!-- FOOTER -->
+            <div class="footer">
+
+                Гэрийн хаяг:
+                Улаанбаатар, БЗД, 14-р хороо,
+                Мандах наран хотхон
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Excel to HTML Table</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>FileReader()-Excel хүснэгт харуулах</h2>
+    <input type="file" id="excelInput" accept=".xlsx, .xls">
+
+    <div id="tableOutput"></div>
+
+    <script>
+        document.getElementById('excelInput').addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (event) {
+                const data = new Uint8Array(event.target.result);
+                const workbook = XLSX.read(data, { type: 'array' });
+
+                // Эхний хуудсыг (Sheet) сонгож авах
+                const firstSheetName = workbook.SheetNames[0];
+                const worksheet = workbook.Sheets[firstSheetName];
+
+                // Хуудсыг HTML хүснэгт рүү хөрвүүлэх
+                const htmlTable = XLSX.utils.sheet_to_html(worksheet);
+                document.getElementById('tableOutput').innerHTML = htmlTable;
+            };
+
+            reader.readAsArrayBuffer(file);
+        });
+    </script>
+</body>
+
+</html>

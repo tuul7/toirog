@@ -1,0 +1,123 @@
+<html>
+
+<head>
+    <title>Sign Up Form</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470") no-repeat center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 800px;
+            height: 500px;
+            background: #ffffffcc;
+            display: flex;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Left */
+        .left {
+            width: 50%;
+            background: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470") no-repeat center/cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .left h1 {
+            margin-bottom: 10px;
+        }
+
+        .left button {
+            padding: 10px 25px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Right */
+        .right {
+            width: 50%;
+            padding: 40px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .signup-btn {
+            width: 100%;
+            padding: 12px;
+            background: #6bc48a;
+            border: none;
+            color: white;
+            font-weight: bold;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- LEFT SIDE -->
+        <div class="left">
+            <h1>Sign Up</h1>
+            <p>Please enter your details<br>to sign up and be part of our community</p>
+
+            <p>Already have an account?</p>
+            <button>SIGN IN</button>
+        </div>
+
+        <!-- RIGHT SIDE / FORM -->
+        <div class="right">
+
+            <!-- GET METHOD -->
+            <form action="lab2.html" method="get">
+
+                <div class="row">
+                    <input type="text" name="firstname" placeholder="First Name" required>
+                    <input type="text" name="lastname" placeholder="Last Name" required>
+                </div>
+
+                <input type="text" name="username" placeholder="Username" required>
+
+                <input type="email" name="email" placeholder="Email Address" required>
+
+                <input type="password" name="password" placeholder="Password" required>
+
+                <input type="submit" value="SIGN UP" class="signup-btn">
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

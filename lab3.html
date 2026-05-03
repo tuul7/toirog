@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <title>CSS Туршилтын Жишээ</title>
+    <style>
+        /* Margin - гадна талын зай */
+        .box-margin {
+            margin: 20px;
+            /* Элементийн гадна талд 20px зай гаргана */
+            background-color: lightblue;
+        }
+
+        /* Padding - дотор талын зай */
+        .box-padding {
+            padding: 15px;
+            /* Контент болон хүрээний хооронд 15px зай гаргана */
+            background-color: lightgreen;
+        }
+
+        /* Text Align - текстийн байрлал */
+        .text-align {
+            text-align: center;
+            /* Текстийг төвд байрлуулна */
+            background-color: lightyellow;
+        }
+
+        /* Border - хүрээ */
+        .box-border {
+            border: 2px solid black;
+            /* 2px өргөнтэй хар хүрээ */
+            background-color: lightpink;
+        }
+
+        .outline-demo {
+            outline: 6px dashed red;
+            /* Border-ийн гадна талд зурна
+               Хэмжээ нэмэхгүй */
+            background-color: lightgray;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        /* Line-height - мөр хоорондын зай */
+        .text-line {
+            line-height: 5;
+            /* Мөр хоорондын зайг 5 дахин нэмэгдүүлнэ */
+            background-color: lavender;
+        }
+
+        /* Opacity - тунгалаг байдал */
+        .box-opacity {
+            opacity: 0.5;
+            /* Элементийн тунгалаг байдлыг 50% болгож үзүүлнэ */
+            background-color: orange;
+        }
+
+        /* !important - бусад дүрмийг дарж заавал хэрэгжүүлнэ */
+        .override-style {
+            color: red !important;
+            /* Энэ өнгө нь бусад бүх color дүрмийг дарж улаан өнгөөр харагдана */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 align="center"><i>
+            <font color="black">ДАСГАЛ АЖИЛ:</font>
+        </i></h1><br>
+
+    <div class="box-margin">Энэ div нь margin хэрэглэж гадна талд зай гаргасан.</div>
+
+    <div class="box-padding">Энэ div нь padding хэрэглэж дотор талд зай гаргасан.</div>
+
+    <div class="text-align">Энэ текст нь төвд байрласан.</div>
+
+    <div class="box-border">Энэ div нь хүрээтэй.</div>
+
+    <div class="outline-demo">
+        Энэ div нь outline хэрэглэсэн (border-ийн гадна хүрээ).
+    </div>
+
+    <p class="text-line">
+        Энэ бол line-height туршилтын текст.<br>
+        Мөр хоорондын зайг 5 дахин нэмэгдүүлсэн.
+    </p>
+
+    <div class="box-opacity">Энэ div нь opacity 0.5 буюу 50% тунгалаг.</div>
+
+    <p class="override-style">Энэ текст нь !important ашигласан тул заавал улаан өнгөөр харагдана.</p>
+
+</body>
+
+</html>

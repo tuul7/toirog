@@ -1,0 +1,102 @@
+/* Ерөнхий загвар */
+body {
+font-family: Arial, sans-serif;
+margin: 10px;
+background-color: #000;
+}
+
+/* Цэс (Navbar) */
+.navbar {
+background-color: #5ebfff;
+padding: 15px;
+display: flex;
+justify-content: space-around;
+gap: 10px;
+margin-bottom: 10px;
+}
+
+.navbar button {
+padding: 10px;
+width: 100%;
+cursor: pointer;
+border: none;
+background-color: #ccc;
+box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Үндсэн хэсэг */
+.main-container {
+display: flex;
+gap: 10px;
+margin-bottom: 10px;
+}
+
+.sidebar {
+background-color: #e0e0e0;
+padding: 20px;
+text-align: center;
+flex: 1;
+}
+
+.profile-pic {
+background-color: #666;
+color: white;
+height: 150px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 15px;
+}
+
+.line {
+border-bottom: 1px solid #000;
+margin: 10px 0;
+}
+
+.content {
+background-color: #e0e0e0;
+flex: 2;
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 300px;
+}
+
+.footer {
+background-color: #ff998c;
+padding: 20px;
+text-align: center;
+font-weight: bold;
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* 1. Laptop & Tablet (Дэлгэц 1024px-ээс бага үед) */
+@media (max-width: 1024px) {
+.main-container {
+flex-direction: row; /* Хэвтээ хэвээрээ байна */
+}
+.sidebar, .content {
+flex: 1; /* Хоёр тал ижил хэмжээтэй болно */
+}
+}
+
+/* 2. Mobile (Дэлгэц 600px-ээс бага үед) */
+@media (max-width: 600px) {
+.navbar {
+display: grid;
+grid-template-columns: 1fr 1fr; /* Цэс 2 баганатай болно */
+}
+
+.main-container {
+flex-direction: column; /* Дээр дээрээсээ байрлана */
+}
+
+.sidebar {
+width: auto;
+}
+
+.content {
+min-height: 200px;
+}
+}
