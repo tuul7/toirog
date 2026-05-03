@@ -238,94 +238,16 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 clamp(20px, 5vw, 60px);
+            background: transparent;
+            box-shadow: none;
+            backdrop-filter: none;
             transition: background 0.4s ease, box-shadow 0.4s ease;
         }
 
         nav.scrolled {
-            background: rgba(250, 247, 242, 0.95);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 1px 0 var(--border);
-        }
-
-        .nav-logo {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            letter-spacing: 0.15em;
-            color: var(--cream);
-            transition: color var(--transition);
-        }
-
-        nav.scrolled .nav-logo {
-            color: var(--espresso);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 36px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: rgba(245, 240, 232, 0.85);
-            transition: color var(--transition);
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--rust);
-            transition: width var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        nav.scrolled .nav-links a {
-            color: var(--espresso);
-        }
-
-        .nav-links a:hover {
-            color: var(--rust);
-        }
-
-        nav.scrolled .nav-links a:hover {
-            color: var(--rust);
-        }
-
-        .nav-cta {
-            font-size: 0.78rem !important;
-            font-weight: 600 !important;
-            letter-spacing: 0.15em;
-            border: 1.5px solid rgba(245, 240, 232, 0.6);
-            padding: 8px 20px;
-            border-radius: 2px;
-            color: var(--cream) !important;
-            transition: all var(--transition) !important;
-        }
-
-        nav.scrolled .nav-cta {
-            border-color: var(--espresso);
-            color: var(--espresso) !important;
-        }
-
-        .nav-cta:hover {
-            background: var(--rust) !important;
-            border-color: var(--rust) !important;
-            color: var(--cream) !important;
-        }
-
-        .nav-cta::after {
-            display: none !important;
+            background: transparent;
+            box-shadow: none;
+            backdrop-filter: none;
         }
 
         /* Hamburger */
@@ -378,7 +300,6 @@
             transform: translateY(-110%);
             transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             z-index: 999;
-            border-bottom: 1px solid var(--border);
             box-shadow: 0 8px 32px var(--shadow);
         }
 

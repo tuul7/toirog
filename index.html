@@ -37,7 +37,7 @@
             --font-serif: 'Playfair Display', serif;
             --font-body: 'DM Sans', sans-serif;
 
-            --nav-h: 72px;
+            --nav-h: 30px;
             --radius: 4px;
             --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
@@ -62,6 +62,7 @@
             color: var(--espresso);
             overflow-x: hidden;
             cursor: none;
+            margin: 0;
         }
 
         img {
@@ -130,6 +131,7 @@
             opacity: 0.03;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
             background-size: 180px;
+            display: none;
         }
 
         /* ── SCROLLBAR ── */
@@ -238,18 +240,20 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 clamp(20px, 5vw, 60px);
-            transition: background 0.4s ease, box-shadow 0.4s ease;
+            transition: all 0.4s ease;
+            border-bottom: none;
         }
 
         nav.scrolled {
             background: rgba(250, 247, 242, 0.95);
             backdrop-filter: blur(12px);
             box-shadow: 0 1px 0 var(--border);
+            height: 60px;
         }
 
         .nav-logo {
             font-family: var(--font-display);
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             letter-spacing: 0.15em;
             color: var(--cream);
             transition: color var(--transition);
@@ -378,7 +382,6 @@
             transform: translateY(-110%);
             transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             z-index: 999;
-            border-bottom: 1px solid var(--border);
             box-shadow: 0 8px 32px var(--shadow);
         }
 
@@ -393,7 +396,6 @@
             text-transform: uppercase;
             color: var(--espresso);
             padding-bottom: 16px;
-            border-bottom: 1px solid var(--border);
             transition: color 0.2s ease;
         }
 
@@ -409,9 +411,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            padding: var(--nav-h) clamp(20px, 8vw, 120px) 60px;
+            padding-top: var(--nav-h);
             position: relative;
             overflow: hidden;
+            margin: 0
         }
 
         .hero-bg {
@@ -2277,7 +2280,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="footer-copy">© 2025 <span>TOIROG</span> Thrift Shop. Ulaanbaatar, Mongolia.</div>
+            <div class="footer-copy">© 2026 <span>TOIROG</span> Thrift Shop. Ulaanbaatar, Mongolia.</div>
             <button class="back-top" id="backTop">
                 Back to top ↑
             </button>
