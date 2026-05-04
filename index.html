@@ -2845,7 +2845,7 @@
         </div>
         <div class="hero-stats">
             <div class="stat">
-                <div class="stat-num">45K+</div>
+                <div class="stat-num">43.6K+</div>
                 <div class="stat-label">Followers</div>
             </div>
             <div class="stat">
@@ -3191,21 +3191,13 @@
     <script>
         AOS.init({ once: true, offset: 60, easing: 'ease-out-quart' });
 
-        //  EMAILJS CONFIG
-        //  1. Sign up free at https://emailjs.com
-        //  2. Create a Gmail service + email template
-        //  3. Fill in your IDs below
-        //  Template variables: {{to_name}} {{to_email}} {{order_id}}
-        //                      {{product_name}} {{product_price}} {{product_size}}
-        //                      {{pickup_method}} {{phone}} {{note}}
+        //EMAIL
 
-
-        const EMAILJS_KEY = 'YOUR_PUBLIC_KEY';
-        const EMAILJS_SERVICE = 'YOUR_SERVICE_ID';
-        const EMAILJS_TEMPLATE = 'YOUR_TEMPLATE_ID';
-        const SHOP_EMAIL = 'toirogdiii@gmail.com';
-        const emailReady = EMAILJS_KEY !== 'YOUR_PUBLIC_KEY';
-        if (emailReady) emailjs.init({ publicKey: EMAILJS_KEY });
+        const EMAILJS_KEY = '9WJ2SQk6JbaoYwXfG';
+        const EMAILJS_SERVICE = 'service_4z0v1dm';
+        const EMAILJS_TEMPLATE = 'template_jxrbzeg';
+        const SHOP_EMAIL = 'enkhtuulmandal@gmail.com';
+        emailjs.init({ publicKey: EMAILJS_KEY });
 
         // LOADER
         window.addEventListener('load', () => setTimeout(() => document.getElementById('loader').classList.add('hidden'), 2000));
@@ -3347,11 +3339,11 @@
 
             document.getElementById('orderIdBadge').textContent = '#' + orderId;
             document.getElementById('successMsg').textContent = emailSent
-                ? 'Thank you! Confirmation sent to your email 📬'
-                : 'Thank you! We will contact you soon 🙏';
+                ? 'Thank you! Confirmation sent to your email'
+                : 'Thank you! We will contact you soon';
             document.getElementById('emailStatus').textContent = emailSent
-                ? '✓ Email sent to ' + orderData.email
-                : (!emailReady ? '⚠ EmailJS not configured yet' : '⚠ Email failed — we will still contact you');
+                ? 'Email sent to ' + orderData.email
+                : (!emailReady ? 'EmailJS not configured yet' : 'Email failed — we will still contact you');
 
             setStep(3);
             showToast('Order #' + orderId + ' confirmed ✦');
