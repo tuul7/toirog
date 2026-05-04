@@ -2516,7 +2516,8 @@
                 <form id="orderForm">
                     <div class="order-form-group">
                         <label class="order-form-label">Таны нэр / Full Name</label>
-                        <input class="order-form-input" type="text" placeholder="Нэрээ оруулна уу" required />
+                        <input class="order-form-input" type="text" placeholder="Нэрээ оруулна уу / Fill your name"
+                            required />
                     </div>
                     <div class="order-form-group">
                         <label class="order-form-label">Утасны дугаар / Phone</label>
@@ -2525,17 +2526,17 @@
                     <div class="order-form-group">
                         <label class="order-form-label">Хэрхэн авах / Pickup</label>
                         <select class="order-form-input" required>
-                            <option value="" disabled selected>Сонгоно уу</option>
+                            <option value="" disabled selected>Сонгоно уу / Choose</option>
                             <option>Дэлгүүрээс авах / In-store pickup</option>
                             <option>Хүргэлт / Delivery (UB)</option>
                         </select>
                     </div>
                     <div class="order-form-group">
                         <label class="order-form-label">Нэмэлт тэмдэглэл / Note</label>
-                        <input class="order-form-input" type="text" placeholder="Асуулт байвал бичнэ үү (заавал биш)" />
+                        <input class="order-form-input" type="text" placeholder="Ask question (not necessary)" />
                     </div>
                     <button type="submit" class="order-submit-btn">
-                        <span>Захиалга өгөх</span>
+                        <span>Order / Захиалга өгөх</span>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5">
                             <path d="M5 12h14M12 5l7 7-7 7" />
@@ -2546,9 +2547,9 @@
                 <!-- Success -->
                 <div class="order-success" id="orderSuccess">
                     <div class="order-success-icon">✦</div>
-                    <h3>Захиалга амжилттай!</h3>
-                    <p>Бид тантай удахгүй холбогдох болно. Баярлалаа 🙏</p>
-                    <button class="order-success-back" id="orderSuccessBack">← Буцах</button>
+                    <h3>Order successful / Захиайлга амжилттай</h3>
+                    <p>We will reach you soon. Thank you. / Бид тантай удахгүй холбогдох болно. Баярлалаа.</p>
+                    <button class="order-success-back" id="orderSuccessBack">← Back / Буцах</button>
                 </div>
             </div>
         </div>
@@ -2559,8 +2560,8 @@
     <div class="wishlist-drawer" id="wishlistDrawer" role="dialog" aria-label="Wishlist">
         <div class="wishlist-header">
             <div>
-                <div class="wishlist-title">Хүслийн жагсаалт</div>
-                <div class="wishlist-subtitle" id="wishlistSubtitle">0 бүтээгдэхүүн</div>
+                <div class="wishlist-title">Wishlist / Хүслийн жагсаалт</div>
+                <div class="wishlist-subtitle" id="wishlistSubtitle">0 product / 0 бүтээгдэхүүн</div>
             </div>
             <button class="wishlist-close" id="wishlistClose" aria-label="Close wishlist">✕</button>
         </div>
@@ -2569,9 +2570,9 @@
         </div>
         <div class="wishlist-empty" id="wishlistEmpty">
             <div class="wishlist-empty-icon">🤍</div>
-            <p class="wishlist-empty-title">Хоосон байна</p>
-            <p class="wishlist-empty-desc">Бүтээгдэхүүн дээрх ❤️ товчийг дарж хадгал</p>
-            <button class="wishlist-browse-btn" id="wishlistBrowseBtn">Дэлгүүр харах</button>
+            <p class="wishlist-empty-title">Empty / Хоосон байна</p>
+            <p class="wishlist-empty-desc">Save your product ❤️ / Бүтээгдэхүүн дээрх ❤️ товчийг дарж хадгал</p>
+            <button class="wishlist-browse-btn" id="wishlistBrowseBtn">View store / Дэлгүүр харах</button>
         </div>
     </div>
 
@@ -2652,14 +2653,14 @@
             <span class="marquee-item"><span class="dot"></span>VINTAGE FINDS</span>
             <span class="marquee-item"><span class="dot"></span>ULAANBAATAR</span>
             <span class="marquee-item"><span class="dot"></span>SINCE 2020</span>
-            <span class="marquee-item"><span class="dot"></span>♻ ECO-FRIENDLY</span>
+            <span class="marquee-item"><span class="dot"></span>ECO-FRIENDLY</span>
             <span class="marquee-item"><span class="dot"></span>DONATE & DISCOVER</span>
             <span class="marquee-item"><span class="dot"></span>SUSTAINABLE FASHION</span>
             <span class="marquee-item"><span class="dot"></span>PRE-LOVED CLOTHING</span>
             <span class="marquee-item"><span class="dot"></span>VINTAGE FINDS</span>
             <span class="marquee-item"><span class="dot"></span>ULAANBAATAR</span>
             <span class="marquee-item"><span class="dot"></span>SINCE 2020</span>
-            <span class="marquee-item"><span class="dot"></span>♻ ECO-FRIENDLY</span>
+            <span class="marquee-item"><span class="dot"></span>ECO-FRIENDLY</span>
             <span class="marquee-item"><span class="dot"></span>DONATE & DISCOVER</span>
         </div>
     </div>
@@ -2981,6 +2982,7 @@
         </div>
     </footer>
 
+
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
@@ -3058,7 +3060,7 @@
             document.getElementById('modalCat').textContent = product.cat;
             document.getElementById('modalName').textContent = product.name;
             document.getElementById('modalPrice').textContent = product.price;
-            document.getElementById('modalSize').textContent = 'Хэмжээ: ' + product.size;
+            document.getElementById('modalSize').textContent = 'Хэмжээ/Size: ' + product.size;
 
             // Image
             const imgWrap = document.getElementById('modalImgWrap');
@@ -3105,7 +3107,7 @@
             e.preventDefault();
             orderForm.style.display = 'none';
             orderSuccess.classList.add('show');
-            showToast('Захиалга амжилттай илгээгдлээ ✦');
+            showToast('Order sent successfully');
         });
 
         orderSuccessBack.addEventListener('click', () => {
@@ -3173,7 +3175,7 @@
 
         function renderWishlist() {
             const count = wishlist.size;
-            wishlistSubtitle.textContent = count + ' бүтээгдэхүүн';
+            wishlistSubtitle.textContent = count + ' product ';
 
             if (count === 0) {
                 wishlistBody.style.display = 'none';
@@ -3197,8 +3199,8 @@
                         <span class="wishlist-item-size">${p.size}</span>
                     </div>
                     <div class="wishlist-item-actions">
-                        <button class="wishlist-item-order" data-idx="${idx}">Захиалах</button>
-                        <button class="wishlist-item-remove" data-idx="${idx}">Хасах</button>
+                        <button class="wishlist-item-order" data-idx="${idx}">Order</button>
+                        <button class="wishlist-item-remove" data-idx="${idx}">Remove</button>
                     </div>
                 </div>`;
             }).join('');
@@ -3225,7 +3227,7 @@
             wishlist.add(idx);
             updateBadge();
             syncWishlistButtons();
-            showToast('Хүслийн жагсаалтад нэмэгдлээ ❤️');
+            showToast('Added to wishlist ❤️');
         }
 
         function removeFromWishlist(idx) {
@@ -3233,7 +3235,7 @@
             updateBadge();
             syncWishlistButtons();
             renderWishlist();
-            showToast('Хүслийн жагсаалтаас хасагдлаа');
+            showToast('Removed from wishlist');
         }
 
         function syncWishlistButtons() {
@@ -3252,12 +3254,12 @@
         function buildCard(p, idx) {
             const isWished = wishlist.has(idx);
             return `
-            <div class="product-card" data-cat="${p.cat}" data-idx="${idx}" data-aos="fade-up" role="button" tabindex="0" aria-label="${p.name} захиалах">
+            <div class="product-card" data-cat="${p.cat}" data-idx="${idx}" data-aos="fade-up" role="button" tabindex="0" aria-label="${p.name} order">
                 <div class="product-img">
                     <img src="${p.img}" alt="${p.name}" class="product-photo" />
                     ${p.tag ? `<span class="product-tag-label${p.new ? ' new' : ''}">${p.tag}</span>` : ''}
                     <button class="product-wishlist${isWished ? ' active' : ''}" data-idx="${idx}" aria-label="Add to wishlist">${isWished ? '❤️' : '🤍'}</button>
-                    <div class="product-order-hint"><span>Захиалах →</span></div>
+                    <div class="product-order-hint"><span>Order →</span></div>
                 </div>
                 <div class="product-info">
                     <div class="product-cat">${p.cat}</div>
